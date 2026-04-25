@@ -1,104 +1,148 @@
-<!DOCTYPE html><html dir="rtl" lang="ar"><head>
-<meta charset="utf-8"/>
-<title>بوابة الانشغال - غلاف العرض التقديمي</title>
-<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&family=Tajawal:wght@400;700&display=swap");
-body {width: 1280px; height: 720px; overflow: hidden; background-color: #F0F0F0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "IBM Plex Sans Arabic", "Tajawal", sans-serif}
-.presentation-cover-root {
-    width: 1280px;
-    height: 720px;
-    background-color: #FBFBFB;
-    display: flex;
-    flex-direction: row;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1)
-    }
-.right-text-container {
-    width: 55%;
-    display: flex;
-    flex-direction: column;
-    padding: 80px 60px;
-    background-color: #FFF
-    }
-.left-visual-container {
-    width: 45%;
-    height: 720px
-    }
-.ministry-identity-text {
-    color: #036;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 100px;
-    border-right: 6px solid #28A745;
-    padding-right: 15px
-    }
-.main-project-heading {
-    color: #036;
-    font-size: 52px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 24px
-    }
-.secondary-project-description {
-    color: #555;
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 1.6;
-    margin-bottom: 60px;
-    max-width: 90%
-    }
-.accent-status-block {
-    background-color: #28A745;
-    color: #FFF;
-    padding: 12px 25px;
-    font-size: 18px;
-    font-weight: 700;
-    border-radius: 4px;
-    display: inline-block;
-    align-self: flex-start;
-    margin-bottom: 80px
-    }
-.bottom-date-label {
-    margin-top: auto;
-    color: #888;
-    font-size: 16px;
-    font-weight: 400
-    }
-.cover-image-element {
-    width: 100%;
-    height: 720px;
-    object-fit: cover
-    }
-html { overflow: hidden; }
-</style>
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="utf-8" />
+    <title>بوابة الانشغال - غلاف العرض التقديمي</title>
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&family=Tajawal:wght@400;700&display=swap");
+
+        body {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background-color: #F0F0F0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "IBM Plex Sans Arabic", "Tajawal", sans-serif
+        }
+
+        .presentation-cover-root {
+            width: 1280px;
+            height: 720px;
+            background-color: #FBFBFB;
+            display: flex;
+            flex-direction: row;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1)
+        }
+
+        .right-text-container {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            padding: 80px 60px;
+            background-color: #FFF
+        }
+
+        .left-visual-container {
+            width: 45%;
+            height: 720px
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 80px;
+        }
+
+        .ministry-logo {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+        }
+
+        .ministry-identity-text {
+            color: #036;
+            font-size: 24px;
+            font-weight: 700;
+            border-right: 6px solid #28A745;
+            padding-right: 15px;
+            margin-bottom: 0;
+        }
+
+        .main-project-heading {
+            color: #036;
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px
+        }
+
+        .secondary-project-description {
+            color: #555;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 60px;
+            max-width: 90%
+        }
+
+        .accent-status-block {
+            background-color: #28A745;
+            color: #FFF;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 4px;
+            display: inline-block;
+            align-self: flex-start;
+            margin-bottom: 60px
+        }
+
+        .bottom-date-label {
+            margin-top: auto;
+            color: #888;
+            font-size: 16px;
+            font-weight: 400
+        }
+
+        .cover-image-element {
+            width: 100%;
+            height: 720px;
+            object-fit: cover
+        }
+
+        html {
+            overflow: hidden;
+        }
+    </style>
 </head>
+
 <body>
-<div class="presentation-cover-root" style="overflow: hidden;">
-<!-- القسم الأيمن: النصوص والمعلومات -->
-<div class="right-text-container">
-<div class="ministry-identity-text">
-                وزارة التكوين والتعليم المهنيين
+    <div class="presentation-cover-root" style="overflow: hidden;">
+        <!-- القسم الأيمن: النصوص والمعلومات -->
+        <div class="right-text-container">
+            <div class="header-container">
+                <img src="logo.png" alt="الشعار" class="ministry-logo" />
+                <div class="ministry-identity-text">
+                    <span
+                        style="display: block; font-size: 16px; font-weight: 400; color: #555; margin-bottom: 4px;">الجمهورية
+                        الجزائرية الديمقراطية الشعبية</span>
+                    <span>وزارة التكوين والتعليم المهنيين</span>
+                </div>
             </div>
-<h1 class="main-project-heading">
-                بوابة الانشغال –<br/>
+            <h1 class="main-project-heading">
+                بوابة الانشغال –<br />
                 المنصة الرقمية لإدارة الشكاوى
             </h1>
-<p class="secondary-project-description">
-                نحو حوكمة رقمية وشفافية في قطاع التكوين والتعليم المهنيين لتعزيز كفاءة معالجة تظلمات وانشغالات المواطنين.
+            <p class="secondary-project-description">
+                نحو حوكمة رقمية وشفافية في قطاع التكوين والتعليم المهنيين لتعزيز كفاءة معالجة تظلمات وانشغالات
+                المواطنين.
             </p>
-<div class="accent-status-block">
+            <div class="accent-status-block">
                 مشروع التحول الرقمي 2026
             </div>
-<div class="bottom-date-label">
-                تاريخ العرض: 25 أفريل 2026
-            </div>
-</div>
-<!-- القسم الأيسر: الصورة البصرية -->
-<div class="left-visual-container">
-<img alt="التحول الرقمي" class="cover-image-element" src="https://agents-download.skywork.ai/image/ppt/7453765156678574081/82755496c010385a507fe2a66c6d0094.png"/>
-</div>
-</div>
 
-</body></html>
+        </div>
+        <!-- القسم الأيسر: الصورة البصرية -->
+        <div class="left-visual-container">
+            <img alt="صورة الوزيرة" class="cover-image-element" src="image.png" />
+        </div>
+    </div>
+
+</body>
+
+</html>
