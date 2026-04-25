@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة الانشغال – العرض التقديمي</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&family=Tajawal:wght@400;700&display=swap");
+
+        :root {
+            --primary: #003366;
+            --accent: #28A745;
+            --bg-dark: #121212;
+            --text-light: #f0f0f0;
+            --slide-width: 1280px;
+            --slide-height: 720px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "IBM Plex Sans Arabic", "Tajawal", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #1e1e1e;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .title span {
+            color: var(--accent);
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background-color: #444;
+            transform: translateY(-1px);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: #004488;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background-color: #218838;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background-color: #333;
+            transform: none;
+        }
+
+        .slide-counter {
+            background: #2a2a2a;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            direction: ltr;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Presentation Wrapper */
+        .presentation-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: radial-gradient(circle, #2a2a2a 0%, #121212 100%);
+            overflow: hidden;
+        }
+
+        /* The scaling wrapper to fit iframe without scrollbars */
+        .scale-wrapper {
+            width: var(--slide-width);
+            height: var(--slide-height);
+            transform-origin: center center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            background: #fff;
+            position: absolute;
+            transition: transform 0.2s ease-out;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: var(--slide-width);
+            height: var(--slide-height);
+            border: none;
+            display: block;
+            background-color: #fff;
+        }
+
+        /* Overlay Navigation Arrows for mouse hover */
+        .nav-overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 15%;
+            z-index: 5;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-overlay:hover {
+            opacity: 1;
+        }
+        
+        .nav-prev {
+            right: 0;
+            background: linear-gradient(to left, rgba(0,0,0,0.4), transparent);
+        }
+        
+        .nav-next {
+            left: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.4), transparent);
+        }
+
+        .arrow-icon {
+            background: rgba(0,0,0,0.8);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        
+        .nav-overlay:hover .arrow-icon {
+            transform: scale(1.1);
+        }
+        
+        select {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #444;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: inherit;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        
+        select:hover, select:focus {
+            border-color: var(--accent);
+        }
+
+        /* Micro-animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .slide-entering {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        
+        /* Floating particles or nice background touch (optional) */
+        .bg-pattern {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="title">
+            <span>بوابة الانشغال</span>
+            | العرض التقديمي
+        </div>
+        
+        <div class="controls">
+            <select id="slide-selector" title="انتقل إلى شريحة محددة">
+                <!-- Will be populated by JS -->
+            </select>
+            
+            <button class="btn" id="btn-fullscreen" title="ملء الشاشة">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+            </button>
+            <button class="btn btn-primary" id="btn-prev">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                السابق
+            </button>
+            <div class="slide-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">25</span>
+            </div>
+            <button class="btn btn-accent" id="btn-next">
+                التالي
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="presentation-container" id="presentation-container">
+        <div class="bg-pattern"></div>
+        
+        <div class="nav-overlay nav-prev" id="overlay-prev" title="السابق">
+            <div class="arrow-icon">▶</div>
+        </div>
+        <div class="nav-overlay nav-next" id="overlay-next" title="التالي">
+            <div class="arrow-icon">◀</div>
+        </div>
+        
+        <div class="scale-wrapper" id="scale-wrapper">
+            <iframe id="slide-frame" src="page_1.html" class="slide-entering"></iframe>
+        </div>
+    </div>
+
+    <script>
+        const TOTAL_SLIDES = 25;
+        let currentSlide = 1;
+        
+        const frame = document.getElementById('slide-frame');
+        const scaleWrapper = document.getElementById('scale-wrapper');
+        const presentationContainer = document.getElementById('presentation-container');
+        
+        const btnPrev = document.getElementById('btn-prev');
+        const btnNext = document.getElementById('btn-next');
+        const overlayPrev = document.getElementById('overlay-prev');
+        const overlayNext = document.getElementById('overlay-next');
+        const spanCurrent = document.getElementById('current-slide');
+        const spanTotal = document.getElementById('total-slides');
+        const selector = document.getElementById('slide-selector');
+        const btnFullscreen = document.getElementById('btn-fullscreen');
+
+        spanTotal.textContent = TOTAL_SLIDES;
+
+        // Populate selector
+        for (let i = 1; i <= TOTAL_SLIDES; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = `الشريحة ${i} من ${TOTAL_SLIDES}`;
+            selector.appendChild(option);
+        }
+
+        function loadSlide(index) {
+            if (index < 1 || index > TOTAL_SLIDES) return;
+            currentSlide = index;
+            
+            // Trigger animation
+            frame.classList.remove('slide-entering');
+            void frame.offsetWidth; // trigger reflow
+            frame.classList.add('slide-entering');
+            
+            frame.src = `page_${currentSlide}.html`;
+            spanCurrent.textContent = currentSlide;
+            selector.value = currentSlide;
+            
+            updateButtons();
+        }
+
+        function updateButtons() {
+            btnPrev.disabled = currentSlide === 1;
+            btnNext.disabled = currentSlide === TOTAL_SLIDES;
+            
+            overlayPrev.style.display = currentSlide === 1 ? 'none' : 'flex';
+            overlayNext.style.display = currentSlide === TOTAL_SLIDES ? 'none' : 'flex';
+        }
+
+        function nextSlide() { loadSlide(currentSlide + 1); }
+        function prevSlide() { loadSlide(currentSlide - 1); }
+
+        // Event Listeners
+        btnNext.addEventListener('click', nextSlide);
+        btnPrev.addEventListener('click', prevSlide);
+        overlayNext.addEventListener('click', nextSlide);
+        overlayPrev.addEventListener('click', prevSlide);
+        
+        selector.addEventListener('change', (e) => {
+            loadSlide(parseInt(e.target.value));
+            // Return focus to the frame so keyboard commands still work on the body
+            frame.focus();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            // Since it's RTL Arabic layout, Left arrow means go to next logically (reading right to left)
+            if (e.key === 'ArrowLeft') nextSlide();  
+            if (e.key === 'ArrowRight') prevSlide();
+            if (e.key === 'PageDown' || e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault(); // Prevent scrolling on space/pgDn
+                nextSlide();
+            }
+            if (e.key === 'PageUp') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Responsive Scaling
+        function resizeFrame() {
+            const containerWidth = presentationContainer.clientWidth;
+            const containerHeight = presentationContainer.clientHeight;
+            
+            const slideWidth = 1280;
+            const slideHeight = 720;
+            
+            // Keep some padding around
+            const padding = 20; 
+            const scaleX = (containerWidth - padding * 2) / slideWidth;
+            const scaleY = (containerHeight - padding * 2) / slideHeight;
+            
+            const scale = Math.min(scaleX, scaleY, 1); 
+            
+            scaleWrapper.style.transform = `scale(${scale})`;
+        }
+
+        window.addEventListener('resize', resizeFrame);
+        // Initial setup
+        resizeFrame();
+        updateButtons();
+        
+        // Fullscreen support
+        btnFullscreen.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch((err) => {
+                    console.error("Error attempting to true full-screen mode:");
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        });
+        
+    </script>
+</body>
+</html>

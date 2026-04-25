@@ -1,0 +1,251 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=1280, height=720" name="viewport"/>
+<title>بوابة الانشغال - دورة حياة الشكوى</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&amp;family=Tajawal:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>:root {
+    --primary-navy: #036;
+    --accent-green: #28A745;
+    --bg-light: #FBFBFB;
+    --card-white: #FFF;
+    --text-gray: #555;
+    --font-main: "IBM Plex Sans Arabic", "Tajawal", sans-serif
+    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+    }
+body {width: 1280px; height: 720px; overflow: hidden; background-color: #E0E0E0;
+    font-family: var(--font-main)}
+.slide-root-canvas {
+    width: 1280px;
+    height: 720px;
+    background-color: var(--bg-light);
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column
+    }
+/* Title Section Styles from DESIGN */
+.title-region-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 30px;
+    margin-bottom: 25px;
+    border-right: 6px solid var(--accent-green);
+    background-color: var(--card-white);
+    direction: rtl;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+    margin-right: 40px;
+    margin-left: 40px
+    }
+.title-main-text {
+    font-family: "IBM Plex Sans Arabic";
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--primary-navy);
+    margin: 0
+    }
+.title-accent-line {
+    height: 2px;
+    width: 60px;
+    background-color: var(--primary-navy);
+    margin-top: 8px
+    }
+.subtitle-description-text {
+    font-size: 16px;
+    color: var(--text-gray);
+    margin-top: 10px;
+    font-weight: 400
+    }
+/* Workflow Layout */
+.workflow-main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px 40px 40px
+    }
+.workflow-steps-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%
+    }
+.workflow-step-card {
+    flex: 1;
+    background-color: var(--card-white);
+    border-radius: 15px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+    border-bottom: 5px solid transparent;
+    transition: all 0.3s ease
+    }
+.workflow-step-card:nth-child(odd) {
+    border-bottom-color: var(--primary-navy)
+    }
+.workflow-step-card:nth-child(even) {
+    border-bottom-color: var(--accent-green)
+    }
+.step-number-badge {
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary-navy);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px
+    }
+.step-icon-wrapper {
+    font-size: 40px;
+    color: var(--primary-navy);
+    margin-bottom: 20px
+    }
+.workflow-step-card:nth-child(even) .step-icon-wrapper {
+    color: var(--accent-green)
+    }
+.step-title-heading {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-navy);
+    margin-bottom: 15px
+    }
+.step-info-paragraph {
+    font-size: 15px;
+    color: var(--text-gray);
+    line-height: 1.6
+    }
+/* Visual Guide Legend */
+.workflow-status-legend {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    padding: 15px;
+    background-color: rgba(0, 51, 102, 0.03);
+    border-radius: 10px
+    }
+.legend-item-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--primary-navy);
+    font-weight: 700
+    }
+.legend-dot-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%
+    }
+.dot-navy {
+    background-color: var(--primary-navy)
+    }
+.dot-green {
+    background-color: var(--accent-green)
+    }
+html { overflow: hidden; }
+</style>
+</head>
+<body>
+<div class="slide-root-canvas" style="overflow: hidden;">
+<!-- Header Section -->
+<div class="title-region-container">
+<h2 class="title-main-text">دورة حياة الشكوى ومسارها الرقمي</h2>
+<div class="title-accent-line"></div>
+<p class="subtitle-description-text">توضيح المراحل التي تمر بها الشكوى من الإيداع إلى التوجيه ثم المعالجة وصولاً إلى الرد النهائي والإغلاق.</p>
+</div>
+<!-- Workflow Content -->
+<div class="workflow-main-wrapper">
+<div class="workflow-steps-container">
+<!-- Step 1 -->
+<div class="workflow-step-card">
+<div class="step-number-badge">١</div>
+<div class="step-icon-wrapper">
+<i class="fas fa-file-signature"></i>
+</div>
+<h3 class="step-title-heading">إيداع الشكوى</h3>
+<p class="step-info-paragraph">
+                        يقوم المواطن أو المتربص بإنشاء طلب جديد عبر المنصة مع إرفاق كافة الوثائق الثبوتية اللازمة.
+                    </p>
+</div>
+<!-- Step 2 -->
+<div class="workflow-step-card">
+<div class="step-number-badge">٢</div>
+<div class="step-icon-wrapper">
+<i class="fas fa-user-check"></i>
+</div>
+<h3 class="step-title-heading">المراجعة والفرز</h3>
+<p class="step-info-paragraph">
+                        يقوم مسؤول التوزيع بمراجعة أولية للشكوى للتأكد من استيفاء الشروط وتصنيفها حسب نوع الانشغال.
+                    </p>
+</div>
+<!-- Step 3 -->
+<div class="workflow-step-card">
+<div class="step-number-badge">٣</div>
+<div class="step-icon-wrapper">
+<i class="fas fa-route"></i>
+</div>
+<h3 class="step-title-heading">التوجيه الذكي</h3>
+<p class="step-info-paragraph">
+                        تحويل الشكوى آلياً إلى المديرية الولائية أو المصلحة المركزية المختصة بناءً على النطاق الجغرافي والموضوعي.
+                    </p>
+</div>
+<!-- Step 4 -->
+<div class="workflow-step-card">
+<div class="step-number-badge">٤</div>
+<div class="step-icon-wrapper">
+<i class="fas fa-tools"></i>
+</div>
+<h3 class="step-title-heading">المعالجة والحل</h3>
+<p class="step-info-paragraph">
+                        تقوم الجهة المعنية بدراسة الملف تقنياً وميدانياً، وصياغة الرد المناسب واتخاذ الإجراءات التصحيحية.
+                    </p>
+</div>
+<!-- Step 5 -->
+<div class="workflow-step-card">
+<div class="step-number-badge">٥</div>
+<div class="step-icon-wrapper">
+<i class="fas fa-archive"></i>
+</div>
+<h3 class="step-title-heading">الإغلاق والأرشفة</h3>
+<p class="step-info-paragraph">
+                        إخطار المستخدم بالرد النهائي عبر الإشعارات، وإغلاق التذكرة رقمياً مع إمكانية تقييم جودة الخدمة.
+                    </p>
+</div>
+</div>
+<!-- Legend/Footer Info -->
+<div class="workflow-status-legend">
+<div class="legend-item-box">
+<div class="legend-dot-indicator dot-navy"></div>
+<span>إجراءات إدارية مركزية</span>
+</div>
+<div class="legend-item-box">
+<div class="legend-dot-indicator dot-green"></div>
+<span>إجراءات تنفيذية ميدانية</span>
+</div>
+<div class="legend-item-box" style="margin-right: 20px; border-right: 2px solid #ddd; padding-right: 20px;">
+<i class="fas fa-clock" style="color: var(--primary-navy);"></i>
+<span>نظام تنبيهات ذكي في كل مرحلة</span>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

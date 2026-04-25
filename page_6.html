@@ -1,0 +1,218 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=1280, height=720" name="viewport"/>
+<title>هيكلية مستخدمي النظام والأدوار</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&amp;family=Tajawal:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+    }
+body {width: 1280px; height: 720px; overflow: hidden; font-family: "IBM Plex Sans Arabic", "Tajawal", sans-serif;
+    background-color: #FBFBFB;
+    color: #036}
+.slide-root-container {
+    width: 1280px;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 60px;
+    position: relative
+    }
+/* Title Area strictly following <DESIGN> point 7 */
+.title-section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 30px;
+    margin-bottom: 25px;
+    border-right: 6px solid #28A745;
+    background-color: #FFF;
+    direction: rtl;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05)
+    }
+.title-main-heading {
+    font-family: "IBM Plex Sans Arabic";
+    font-weight: 700;
+    font-size: 24px;
+    color: #036;
+    margin: 0
+    }
+.title-decoration-line {
+    height: 2px;
+    width: 60px;
+    background-color: #036;
+    margin-top: 8px
+    }
+.subtitle-description-text {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    padding-right: 10px;
+    line-height: 1.6;
+    max-width: 900px
+    }
+/* Roles Grid Layout */
+.roles-grid-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    flex: 1;
+    margin-top: 10px
+    }
+.role-card-item {
+    flex: 1;
+    background-color: #FFF;
+    border-radius: 12px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border-top: 4px solid #28A745;
+    transition: transform 0.3s ease
+    }
+.role-icon-box {
+    width: 70px;
+    height: 70px;
+    background-color: #f0f9f1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px
+    }
+.role-icon-box i {
+    font-size: 32px;
+    color: #28A745
+    }
+.role-name-heading {
+    font-size: 20px;
+    font-weight: 700;
+    color: #036;
+    margin-bottom: 15px
+    }
+.role-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%
+    }
+.role-feature-point {
+    font-size: 15px;
+    color: #555;
+    padding: 8px 0;
+    border-bottom: 1px dashed #EEE;
+    line-height: 1.4
+    }
+.role-feature-point:last-child {
+    border-bottom: none
+    }
+/* Footer Branding */
+.footer-branding-bar {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E0E0E0;
+    padding-top: 15px
+    }
+.footer-ministry-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #036
+    }
+.footer-project-tag {
+    font-size: 14px;
+    color: #28A745;
+    font-weight: 700
+    }
+html { overflow: hidden; }
+</style>
+</head>
+<body>
+<div class="slide-root-container" style="overflow: hidden;">
+<!-- Title Section -->
+<div class="title-section-container">
+<h2 class="title-main-heading">هيكلية مستخدمي النظام والأدوار</h2>
+<div class="title-decoration-line"></div>
+</div>
+<!-- Subtitle Description -->
+<p class="subtitle-description-text">
+            تعريف بأنواع المستخدمين في المنصة وتوزيع الصلاحيات لضمان حوكمة رقمية دقيقة لمسار معالجة الانشغالات والشكاوى.
+        </p>
+<!-- Roles Distribution -->
+<div class="roles-grid-wrapper">
+<!-- User Role -->
+<div class="role-card-item">
+<div class="role-icon-box">
+<i class="fas fa-user-graduate"></i>
+</div>
+<h3 class="role-name-heading">المستخدم</h3>
+<ul class="role-features-list">
+<li class="role-feature-point">إنشاء حساب شخصي</li>
+<li class="role-feature-point">تقديم الشكاوى والمرفقات</li>
+<li class="role-feature-point">تتبع حالة الطلب لحظياً</li>
+</ul>
+</div>
+<!-- Dispatcher Role -->
+<div class="role-card-item">
+<div class="role-icon-box">
+<i class="fas fa-route"></i>
+</div>
+<h3 class="role-name-heading">مسؤول التوزيع</h3>
+<ul class="role-features-list">
+<li class="role-feature-point">مراجعة الشكاوى الواردة</li>
+<li class="role-feature-point">تصنيف وتوجيه الطلبات</li>
+<li class="role-feature-point">رفض الطلبات غير المستوفاة</li>
+</ul>
+</div>
+<!-- Directorates Role -->
+<div class="role-card-item">
+<div class="role-icon-box">
+<i class="fas fa-city"></i>
+</div>
+<h3 class="role-name-heading">المديريات الولائية</h3>
+<ul class="role-features-list">
+<li class="role-feature-point">استلام الطلبات المحولة</li>
+<li class="role-feature-point">المعالجة التقنية والميدانية</li>
+<li class="role-feature-point">تقديم الردود النهائية</li>
+</ul>
+</div>
+<!-- Central Admin/Ministry Role -->
+<div class="role-card-item">
+<div class="role-icon-box">
+<i class="fas fa-landmark"></i>
+</div>
+<h3 class="role-name-heading">الإدارة المركزية</h3>
+<ul class="role-features-list">
+<li class="role-feature-point">رقابة عامة على الأداء</li>
+<li class="role-feature-point">التدخل في الحالات العالقة</li>
+<li class="role-feature-point">استخراج التقارير الوطنية</li>
+</ul>
+</div>
+<!-- System Admin Role -->
+<div class="role-card-item">
+<div class="role-icon-box">
+<i class="fas fa-user-shield"></i>
+</div>
+<h3 class="role-name-heading">مدير النظام</h3>
+<ul class="role-features-list">
+<li class="role-feature-point">إدارة الحسابات والصلاحيات</li>
+<li class="role-feature-point">ضبط إعدادات المنصة</li>
+<li class="role-feature-point">أمن البيانات والنسخ الاحتياطي</li>
+</ul>
+</div>
+</div>
+<!-- Footer -->
+<div class="footer-branding-bar">
+<div class="footer-ministry-name">وزارة التكوين والتعليم المهنيين</div>
+<div class="footer-project-tag">بوابة الانشغال • 2026</div>
+</div>
+</div>
+
+</body></html>

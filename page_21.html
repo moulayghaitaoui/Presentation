@@ -1,0 +1,297 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>مثال عملي لسيناريو معالجة شكوى</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&amp;family=Tajawal:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>:root {
+    --primary-blue: #036;
+    --accent-green: #28A745;
+    --bg-light: #FBFBFB;
+    --white: #FFF;
+    --text-dark: #036;
+    --text-secondary: #555;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.05)
+    }
+* {
+    box-sizing: border-box;
+    margin: 0 0;
+    padding: 0 0
+    }
+body {width: 1280px; height: 720px; overflow: hidden; font-family: "IBM Plex Sans Arabic", "Tajawal", sans-serif;
+    background-color: #E0E0E0;
+    display: flex;
+    justify-content: center;
+    align-items: center}
+.slide-root-canvas {
+    width: 1280px;
+    height: 720px;
+    background-color: var(--bg-light);
+    padding: 32px 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column
+    }
+/* Design Principle: Title Region */
+.title-region-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 30px;
+    margin-bottom: 32px;
+    border-right: 6px solid var(--accent-green);
+    background-color: var(--white);
+    direction: rtl;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05)
+    }
+.title-main-heading {
+    font-family: "IBM Plex Sans Arabic";
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--primary-blue);
+    margin: 0 0
+    }
+.title-underline-bar {
+    height: 2px;
+    width: 60px;
+    background-color: var(--primary-blue);
+    margin-top: 6px
+    }
+/* Main Content Layout */
+.scenario-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px 30px
+    }
+.scenario-intro-box {
+    background-color: var(--white);
+    border-right: 4px solid var(--primary-blue);
+    padding: 16px 20px;
+    border-radius: 4px;
+    box-shadow: var(--shadow)
+    }
+.scenario-intro-text {
+    color: var(--text-dark);
+    font-size: 20px;
+    font-weight: 700
+    }
+.scenario-intro-subtext {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-top: 4px
+    }
+/* Multi-column Layout for Process Steps */
+.process-flow-container {
+    display: flex;
+    align-items: stretch;
+    gap: 16px 20px;
+    flex: 1
+    }
+.process-step-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+    }
+.step-item-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-top: 5px solid var(--accent-green);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative
+    }
+.step-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(40, 167, 69, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px
+    }
+.step-icon-wrapper i {
+    font-size: 32px;
+    color: var(--accent-green)
+    }
+.step-title-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 12px
+    }
+.step-description-list {
+    list-style: none;
+    text-align: right;
+    width: 100%
+    }
+.step-description-item {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px 10px;
+    line-height: 1.5
+    }
+.step-description-item i {
+    color: var(--accent-green);
+    font-size: 12px;
+    margin-top: 3px
+    }
+.step-time-badge {
+    margin-top: auto;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 4px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700
+    }
+/* Flow Connector Indicators (Visual only, no absolute lines) */
+.connector-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+    font-size: 24px
+    }
+/* Metrics Footer */
+.scenario-metrics-footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--primary-blue);
+    padding: 16px 20px;
+    border-radius: 8px;
+    color: var(--white)
+    }
+.metric-item-block {
+    display: flex;
+    align-items: center;
+    gap: 12px 15px
+    }
+.metric-value-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-green)
+    }
+.metric-label-text {
+    font-size: 16px
+    }
+html { overflow: hidden; }
+</style>
+</head>
+<body>
+<div class="slide-root-canvas" style="overflow: hidden;">
+<!-- Title Region -->
+<div class="title-region-container">
+<h2 class="title-main-heading">مثال عملي لسيناريو معالجة شكوى</h2>
+<div class="title-underline-bar"></div>
+</div>
+<!-- Main Content Wrapper -->
+<div class="scenario-content-wrapper">
+<!-- Scenario Introduction -->
+<div class="scenario-intro-box">
+<div class="scenario-intro-text">
+<i class="fas fa-info-circle" style="margin-left: 10px;"></i>
+                    الحالة: تأخر استلام شهادة التخرج النهائية لمتربص
+                </div>
+<div class="scenario-intro-subtext">
+                    يوضح هذا المثال كيفية انتقال الشكوى بسلاسة بين مختلف مستويات الإدارة لضمان حل سريع وفعال.
+                </div>
+</div>
+<!-- Process Flow (Multi-column) -->
+<div class="process-flow-container">
+<!-- Step 1 -->
+<div class="process-step-column">
+<div class="step-item-card">
+<div class="step-icon-wrapper">
+<i class="fas fa-paper-plane"></i>
+</div>
+<h3 class="step-title-text">تقديم الشكوى</h3>
+<ul class="step-description-list">
+<li class="step-description-item"><i class="fas fa-caret-left"></i> يقوم المتربص برفع الطلب عبر المنصة الرقمية.</li>
+<li class="step-description-item"><i class="fas fa-caret-left"></i> إرفاق نسخة من محضر النجاح والهوية.</li>
+</ul>
+<div class="step-time-badge">10:00 صباحاً</div>
+</div>
+</div>
+<div class="connector-indicator">
+<i class="fas fa-chevron-left"></i>
+</div>
+<!-- Step 2 -->
+<div class="process-step-column">
+<div class="step-item-card">
+<div class="step-icon-wrapper">
+<i class="fas fa-route"></i>
+</div>
+<h3 class="step-title-text">التدقيق والتوجيه</h3>
+<ul class="step-description-list">
+<li class="step-description-item"><i class="fas fa-caret-left"></i> مراجعة مسؤول التوزيع للوثائق المرفقة.</li>
+<li class="step-description-item"><i class="fas fa-caret-left"></i> تحويل الشكوى للمديرية الولائية المختصة.</li>
+</ul>
+<div class="step-time-badge">10:45 صباحاً</div>
+</div>
+</div>
+<div class="connector-indicator">
+<i class="fas fa-chevron-left"></i>
+</div>
+<!-- Step 3 -->
+<div class="process-step-column">
+<div class="step-item-card">
+<div class="step-icon-wrapper">
+<i class="fas fa-tools"></i>
+</div>
+<h3 class="step-title-text">المعالجة والحل</h3>
+<ul class="step-description-list">
+<li class="step-description-item"><i class="fas fa-caret-left"></i> تواصل المديرية مع مركز التكوين المعني.</li>
+<li class="step-description-item"><i class="fas fa-caret-left"></i> تأكيد طباعة الشهادة وتجهيزها للاستلام.</li>
+</ul>
+<div class="step-time-badge">02:30 مساءً</div>
+</div>
+</div>
+<div class="connector-indicator">
+<i class="fas fa-chevron-left"></i>
+</div>
+<!-- Step 4 -->
+<div class="process-step-column">
+<div class="step-item-card">
+<div class="step-icon-wrapper">
+<i class="fas fa-check-double"></i>
+</div>
+<h3 class="step-title-text">الإخطار والإغلاق</h3>
+<ul class="step-description-list">
+<li class="step-description-item"><i class="fas fa-caret-left"></i> إرسال SMS للمتربص بجاهزية الشهادة.</li>
+<li class="step-description-item"><i class="fas fa-caret-left"></i> إغلاق الشكوى وتقييم جودة الخدمة.</li>
+</ul>
+<div class="step-time-badge">04:00 مساءً</div>
+</div>
+</div>
+</div>
+<!-- Footer Metrics -->
+<div class="scenario-metrics-footer">
+<div class="metric-item-block">
+<span class="metric-label-text">إجمالي وقت المعالجة:</span>
+<span class="metric-value-text">6 ساعات</span>
+</div>
+<div class="metric-item-block" style="border-right: 1px solid rgba(255,255,255,0.2);padding-right: 30px;">
+<span class="metric-label-text">عدد المتدخلين:</span>
+<span class="metric-value-text">3 مستخدمين</span>
+</div>
+<div class="metric-item-block" style="border-right: 1px solid rgba(255,255,255,0.2);padding-right: 30px;">
+<span class="metric-label-text">نسبة الرضا:</span>
+<span class="metric-value-text">98%</span>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

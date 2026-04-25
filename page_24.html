@@ -1,0 +1,265 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>خارطة الطريق وخطة التنفيذ</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&amp;family=Tajawal:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>:root {
+    --primary-blue: #036;
+    --accent-green: #28A745;
+    --bg-light: #FBFBFB;
+    --card-white: #FFF;
+    --text-gray: #555
+    }
+body {width: 1280px; height: 720px; overflow: hidden; font-family: "IBM Plex Sans Arabic", "Tajawal", sans-serif;
+    background-color: #F0F2F5;
+    /* Outer background */}
+.slide-root-container {
+    width: 1280px;
+    height: 720px;
+    background-color: var(--bg-light);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box;
+    padding: 40px
+    }
+/* Design Principle Title Region */
+.title-region-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 30px;
+    margin-bottom: 30px;
+    border-right: 6px solid var(--accent-green);
+    background-color: var(--card-white);
+    direction: rtl;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05)
+    }
+.title-text-main {
+    font-family: "IBM Plex Sans Arabic";
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--primary-blue);
+    margin: 0
+    }
+.title-underline-bar {
+    height: 2px;
+    width: 60px;
+    background-color: var(--primary-blue);
+    margin-top: 8px
+    }
+/* Layout Components */
+.main-content-layout {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 40px
+    }
+.intro-description-text {
+    font-size: 18px;
+    color: var(--text-gray);
+    margin-bottom: 10px;
+    line-height: 1.6;
+    padding-right: 10px
+    }
+.roadmap-timeline-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 15px;
+    flex: 1
+    }
+.roadmap-stage-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-white);
+    border-radius: 12px;
+    padding: 25px 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border-top: 5px solid var(--primary-blue);
+    text-align: center;
+    transition: transform 0.3s ease
+    }
+.roadmap-stage-item:nth-child(even) {
+    border-top-color: var(--accent-green)
+    }
+.stage-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f0f7ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto
+    }
+.stage-icon-element {
+    font-size: 24px;
+    color: var(--primary-blue)
+    }
+.roadmap-stage-item:nth-child(even) .stage-icon-element {
+    color: var(--accent-green)
+    }
+.stage-title-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 10px
+    }
+.stage-duration-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: #E9ECEF;
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--text-gray);
+    margin-bottom: 15px;
+    font-weight: 700
+    }
+.stage-details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right
+    }
+.stage-detail-row {
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.5;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px
+    }
+.stage-bullet-marker {
+    color: var(--accent-green);
+    font-size: 10px;
+    margin-top: 5px
+    }
+.horizontal-connector-line {
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-green) 100%);
+    width: 100%;
+    margin: 10px 0 30px 0;
+    border-radius: 2px;
+    opacity: 0.3
+    }
+html { overflow: hidden; }
+</style>
+</head>
+<body>
+<div class="slide-root-container" style="overflow: hidden;">
+<!-- Title Region -->
+<div class="title-region-wrapper">
+<h2 class="title-text-main">خارطة الطريق وخطة التنفيذ</h2>
+<div class="title-underline-bar"></div>
+</div>
+<!-- Main Content -->
+<div class="main-content-layout">
+<p class="intro-description-text">
+<i class="fas fa-calendar-check ml-2" style="color: var(--accent-green);"></i>
+        الجدول الزمني المقترح لمراحل التطوير، التجريب، التكوين، ثم الإطلاق الرسمي للمنصة على المستوى الوطني.
+      </p>
+<div class="horizontal-connector-line"></div>
+<!-- Roadmap Timeline -->
+<div class="roadmap-timeline-container">
+<!-- Stage 1 -->
+<div class="roadmap-stage-item">
+<div class="stage-icon-wrapper">
+<i class="fas fa-clipboard-list stage-icon-element"></i>
+</div>
+<div class="stage-title-text">التخطيط والتحليل</div>
+<div class="stage-duration-tag">الشهر 1</div>
+<ul class="stage-details-list">
+<li class="stage-detail-row">
+<i class="fas fa-check-circle stage-bullet-marker"></i>
+<span>تحديد المتطلبات الوظيفية والتقنية بدقة.</span>
+</li>
+<li class="stage-detail-row">
+<i class="fas fa-check-circle stage-bullet-marker"></i>
+<span>تصميم واجهات المستخدم (UI/UX).</span>
+</li>
+</ul>
+</div>
+<!-- Stage 2 -->
+<div class="roadmap-stage-item">
+<div class="stage-icon-wrapper">
+<i class="fas fa-code stage-icon-element"></i>
+</div>
+<div class="stage-title-text">التطوير والبرمجة</div>
+<div class="stage-duration-tag">الأشهر 2 - 4</div>
+<ul class="stage-details-list">
+<li class="stage-detail-row">
+<i class="fas fa-check-circle stage-bullet-marker"></i>
+<span>بناء النظام الأساسي وقواعد البيانات.</span>
+</li>
+<li class="stage-detail-row">
+<i class="fas fa-check-circle stage-bullet-marker"></i>
+<span>تطوير محرك توزيع الشكاوى الآلي.</span>
+</li>
+</ul>
+</div>
+<!-- Stage 3 -->
+<div class="roadmap-stage-item">
+<div class="stage-icon-wrapper">
+<i class="fas fa-vial stage-icon-element"></i>
+</div>
+<div class="stage-title-text">التجريب والتقييم</div>
+<div class="stage-duration-tag">الشهر 5</div>
+<ul class="stage-details-list">
+<li class="stage-detail-row">
+<i class="fas fa-check-circle stage-bullet-marker"></i>
+<span>إطلاق النسخة التجريبية (Pilot).</span>
+</li>
+<li class="stage-detail-row">
+<i class="fas fa-check-circle stage-bullet-marker"></i>
+<span>اختبار الأمن السيبراني وضمان الجودة.</span>
+</li>
+</ul>
+</div>
+<!-- Stage 4 -->
+<div class="roadmap-stage-item">
+<div class="stage-icon-wrapper">
+<i class="fas fa-chalkboard-teacher stage-icon-element"></i>
+</div>
+<div class="stage-title-text">التكوين والتدريب</div>
+<div class="stage-duration-tag">الشهر 6</div>
+<ul class="stage-details-list">
+<li class="stage-detail-row">
+<i class="fas fa-check-circle stage-bullet-marker"></i>
+<span>تكوين المكونين والمديرين الولائيين.</span>
+</li>
+<li class="stage-detail-row">
+<i class="fas fa-check-circle stage-bullet-marker"></i>
+<span>إعداد أدلة الاستخدام الرقمية.</span>
+</li>
+</ul>
+</div>
+<!-- Stage 5 -->
+<div class="roadmap-stage-item">
+<div class="stage-icon-wrapper">
+<i class="fas fa-rocket stage-icon-element"></i>
+</div>
+<div class="stage-title-text">الإطلاق الرسمي</div>
+<div class="stage-duration-tag">نهاية الشهر 6</div>
+<ul class="stage-details-list">
+<li class="stage-detail-row">
+<i class="fas fa-check-circle stage-bullet-marker"></i>
+<span>التعميم الوطني للمنصة رسمياً.</span>
+</li>
+<li class="stage-detail-row">
+<i class="fas fa-check-circle stage-bullet-marker"></i>
+<span>بدء الدعم الفني والمتابعة المستمرة.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=1280, height=720" name="viewport"/>
+<title>نظام التوجيه والتصنيف الذكي</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&amp;family=Tajawal:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+    }
+body {width: 1280px; height: 720px; overflow: hidden; background-color: #FBFBFB;
+    font-family: "IBM Plex Sans Arabic", "Tajawal", sans-serif}
+/* Slide Root Container */
+.slide-root-container {
+    width: 1280px;
+    height: 720px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FBFBFB
+    }
+/* Title Region - Strictly following <DESIGN> */
+.title-region-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 30px;
+    margin-bottom: 25px;
+    border-right: 6px solid #28A745;
+    background-color: #FFF;
+    direction: rtl;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05)
+    }
+.title-region-text {
+    font-family: "IBM Plex Sans Arabic";
+    font-weight: 700;
+    font-size: 24px;
+    color: #036;
+    margin: 0
+    }
+.title-region-line {
+    height: 2px;
+    width: 60px;
+    background-color: #036;
+    margin-top: 8px
+    }
+/* Main Content Layout */
+.routing-main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    flex: 1;
+    align-items: stretch
+    }
+/* Left Column: Classification Mechanisms */
+.routing-left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    gap: 20px
+    }
+/* Right Column: Thematic Domains */
+.routing-right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    gap: 20px
+    }
+/* Card Styling */
+.mechanism-card-item {
+    background-color: #FFF;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border-right: 4px solid #036;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+    }
+.category-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    flex: 1
+    }
+.category-box-item {
+    background-color: #FFF;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #E0E0E0;
+    transition: all 0.3s ease;
+    flex: 1
+    }
+.category-box-item:hover {
+    border-color: #28A745
+    }
+/* Text & Icon Styles */
+.content-header-title {
+    color: #036;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px
+    }
+.content-header-title i {
+    color: #28A745;
+    font-size: 24px
+    }
+.content-description-text {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6
+    }
+.icon-circle-background {
+    width: 60px;
+    height: 60px;
+    background-color: #F0F7F1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px
+    }
+.icon-circle-background i {
+    font-size: 26px;
+    color: #28A745
+    }
+.category-label-text {
+    color: #036;
+    font-weight: 700;
+    font-size: 18px
+    }
+.badge-status-tag {
+    background-color: #036;
+    color: #FFF;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 10px
+    }
+html { overflow: hidden; }
+</style>
+</head>
+<body>
+<div class="slide-root-container" style="overflow: hidden;">
+<!-- Title Region -->
+<div class="title-region-wrapper">
+<h2 class="title-region-text">نظام التوجيه والتصنيف الذكي</h2>
+<div class="title-region-line"></div>
+</div>
+<!-- Main Content Body -->
+<div class="routing-main-content">
+<!-- Right Column: Thematic Domains (Primary Focus) -->
+<div class="routing-right-column">
+<h3 class="content-header-title" style="margin-right: 10px;">
+<i class="fas fa-layer-group"></i>
+          مجالات التصنيف الموضوعي
+        </h3>
+<div class="category-grid-container">
+<div class="category-box-item">
+<div class="icon-circle-background">
+<i class="fas fa-graduation-cap"></i>
+</div>
+<span class="category-label-text">بيداغوجي</span>
+<p class="content-description-text">انشغالات المتربصين، التكوين، والشهادات</p>
+</div>
+<div class="category-box-item">
+<div class="icon-circle-background">
+<i class="fas fa-user-tie"></i>
+</div>
+<span class="category-label-text">إداري</span>
+<p class="content-description-text">التوظيف، المسار المهني، والموارد البشرية</p>
+</div>
+<div class="category-box-item">
+<div class="icon-circle-background">
+<i class="fas fa-hand-holding-dollar"></i>
+</div>
+<span class="category-label-text">مالي</span>
+<p class="content-description-text">المنح، الميزانيات، والتعويضات المالية</p>
+</div>
+<div class="category-box-item">
+<div class="icon-circle-background">
+<i class="fas fa-tools"></i>
+</div>
+<span class="category-label-text">تقني / منشآت</span>
+<p class="content-description-text">تجهيزات المؤسسات، الصيانة، والإيواء</p>
+</div>
+</div>
+</div>
+<!-- Left Column: Classification Mechanisms -->
+<div class="routing-left-column">
+<h3 class="content-header-title">
+<i class="fas fa-cogs"></i>
+          آليات التوجيه
+        </h3>
+<div class="mechanism-card-item">
+<div class="content-header-title" style="font-size: 18px;">
+<i class="fas fa-robot"></i>
+            تصنيف آلي ذكي
+          </div>
+<p class="content-description-text">
+            يعتمد النظام على تحليل الكلمات المفتاحية في نص الشكوى لاقتراح الجهة المختصة فوراً وتقليل التدخل البشري.
+          </p>
+<div>
+<span class="badge-status-tag">محرك الذكاء الاصطناعي</span>
+</div>
+</div>
+<div class="mechanism-card-item">
+<div class="content-header-title" style="font-size: 18px;">
+<i class="fas fa-user-check"></i>
+            مراجعة مسؤول التوزيع
+          </div>
+<p class="content-description-text">
+            إمكانية التدخل اليدوي لتعديل التوجيه أو إعادة تصنيف الشكاوى المعقدة التي تتداخل فيها الاختصاصات.
+          </p>
+<div>
+<span class="badge-status-tag">الرقابة البشرية</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Note Area (Implicitly spaced by layout) -->
+<div style="margin-top: 20px; border-top: 1px dashed #DDD; padding-top: 15px; color: #777; font-size: 14px;">
+<p><i class="fas fa-info-circle" style="color: #28A745; margin-left: 8px;"></i> تساهم هذه الهيكلية في تقليص زمن وصول الشكوى للمصلحة المختصة بنسبة تصل إلى 70% مقارنة بالنظام الورقي.</p>
+</div>
+</div>
+
+</body></html>

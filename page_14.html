@@ -1,0 +1,278 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=1280, height=720" name="viewport"/>
+<title>نظام الأولويات واتفاقية مستوى الخدمة</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&amp;family=Tajawal:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>:root {
+    --primary-blue: #036;
+    --accent-green: #28A745;
+    --bg-light: #FBFBFB;
+    --text-main: #036;
+    --text-secondary: #555;
+    --card-bg: #FFF
+    }
+body {width: 1280px; height: 720px; overflow: hidden; background-color: #eee;
+    font-family: "IBM Plex Sans Arabic", "Tajawal", sans-serif}
+.page-slide-root {
+    width: 1280px;
+    height: 720px;
+    background-color: var(--bg-light);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 40px;
+    position: relative
+    }
+.title-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 30px;
+    margin-bottom: 30px;
+    border-right: 6px solid var(--accent-green);
+    background-color: var(--card-bg);
+    direction: rtl;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05)
+    }
+.title-main-text {
+    font-family: "IBM Plex Sans Arabic";
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--primary-blue);
+    margin: 0
+    }
+.title-underline-bar {
+    height: 2px;
+    width: 60px;
+    background-color: var(--primary-blue);
+    margin-top: 8px
+    }
+.main-content-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    flex: 1;
+    align-items: stretch
+    }
+.right-info-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px
+    }
+.left-visual-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03)
+    }
+.priority-card-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    border-right: 4px solid var(--primary-blue);
+    gap: 20px
+    }
+.priority-card-item.urgent {
+    border-right-color: #dc3545
+    }
+.priority-card-item.medium {
+    border-right-color: #ffc107
+    }
+.priority-card-item.normal {
+    border-right-color: var(--accent-green)
+    }
+.icon-box-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f0f4f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--primary-blue)
+    }
+.priority-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+    }
+.priority-label-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text-main)
+    }
+.priority-time-desc {
+    font-size: 15px;
+    color: var(--text-secondary)
+    }
+.sla-chart-container {
+    width: 100%;
+    height: 400px
+    }
+.chart-legend-box {
+    margin-top: 15px;
+    padding: 10px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+    color: var(--text-secondary)
+    }
+.legend-item-point {
+    display: flex;
+    align-items: center;
+    gap: 8px
+    }
+.dot-marker {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%
+    }
+html { overflow: hidden; }
+</style>
+</head>
+<body>
+<div class="page-slide-root" style="overflow: hidden;">
+<!-- Title Section -->
+<div class="title-section-wrapper">
+<h2 class="title-main-text">نظام الأولويات واتفاقية مستوى الخدمة (SLA)</h2>
+<div class="title-underline-bar"></div>
+</div>
+<!-- Main Content -->
+<div class="main-content-layout">
+<!-- Right Column: Priority Definitions -->
+<div class="right-info-column">
+<div class="priority-card-item urgent">
+<div class="icon-box-wrapper" style="color: #dc3545; background-color: #fff1f0;">
+<i class="fas fa-fire-alt"></i>
+</div>
+<div class="priority-text-content">
+<span class="priority-label-title">أولوية قصوى (عاجل جداً)</span>
+<span class="priority-time-desc">الرد الأولي: 4 ساعات | الحل النهائي: 24 ساعة عمل.</span>
+</div>
+</div>
+<div class="priority-card-item medium">
+<div class="icon-box-wrapper" style="color: #ffc107; background-color: #fffbe6;">
+<i class="fas fa-clock"></i>
+</div>
+<div class="priority-text-content">
+<span class="priority-label-title">أولوية متوسطة</span>
+<span class="priority-time-desc">الرد الأولي: 24 ساعة | الحل النهائي: 3 أيام عمل.</span>
+</div>
+</div>
+<div class="priority-card-item normal">
+<div class="icon-box-wrapper" style="color: #28a745; background-color: #f6ffed;">
+<i class="fas fa-check-circle"></i>
+</div>
+<div class="priority-text-content">
+<span class="priority-label-title">أولوية عادية</span>
+<span class="priority-time-desc">الرد الأولي: 48 ساعة | الحل النهائي: 7 أيام عمل.</span>
+</div>
+</div>
+</div>
+<!-- Left Column: Visual Representation (Chart) -->
+<div class="left-visual-column">
+<div style="text-align: center; margin-bottom: 20px;">
+<h3 style="font-size: 18px; font-weight: 700; color: var(--primary-blue);">أقصى مدة معالجة حسب نوع الانشغال (بالساعات)</h3>
+</div>
+<div class="sla-chart-container" id="sla-priority-chart"></div>
+<div class="chart-legend-box">
+<div class="legend-item-point">
+<span class="dot-marker" style="background-color: #dc3545;"></span>
+<span>حالات طارئة</span>
+</div>
+<div class="legend-item-point">
+<span class="dot-marker" style="background-color: #ffc107;"></span>
+<span>حالات فنية</span>
+</div>
+<div class="legend-item-point">
+<span class="dot-marker" style="background-color: #28a745;"></span>
+<span>استفسارات عامة</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    const chartDom = document.getElementById('sla-priority-chart');
+    const myChart = echarts.init(chartDom);
+    const option = {
+      grid: {
+        left: '10%',
+        right: '10%',
+        bottom: '15%',
+        top: '10%',
+        containLabel: true
+      },
+      xAxis: {
+        type: 'category',
+        data: ['عاجل جداً', 'متوسط', 'عادي'],
+        axisLabel: {
+          fontFamily: 'IBM Plex Sans Arabic',
+          fontSize: 14,
+          color: '#555'
+        },
+        axisLine: { lineStyle: { color: '#ddd' } }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'ساعة عمل',
+        nameTextStyle: {
+          fontFamily: 'IBM Plex Sans Arabic',
+          padding: [0, 0, 0, 40]
+        },
+        axisLabel: {
+          fontFamily: 'IBM Plex Sans Arabic',
+          fontSize: 12,
+          color: '#888'
+        },
+        splitLine: { lineStyle: { type: 'dashed', color: '#eee' } }
+      },
+      series: [
+        {
+          data: [
+            {
+              value: 24,
+              itemStyle: { color: '#dc3545', borderRadius: [5, 5, 0, 0] }
+            },
+            {
+              value: 72,
+              itemStyle: { color: '#ffc107', borderRadius: [5, 5, 0, 0] }
+            },
+            {
+              value: 168,
+              itemStyle: { color: '#28a745', borderRadius: [5, 5, 0, 0] }
+            }
+          ],
+          type: 'bar',
+          barWidth: '50%',
+          label: {
+            show: true,
+            position: 'top',
+            fontFamily: 'IBM Plex Sans Arabic',
+            fontSize: 12,
+            formatter: '{c} ساعة'
+          }
+        }
+      ]
+    };
+
+    myChart.setOption(option);
+  </script>
+
+</body></html>

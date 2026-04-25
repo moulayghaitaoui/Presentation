@@ -1,0 +1,298 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=1280, height=720" name="viewport"/>
+<title>بوابة الانشغال - لوحة التحكم</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&family=Tajawal:wght@400;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+    }
+body {width: 1280px; height: 720px; overflow: hidden; background-color: #FBFBFB;
+    font-family: "IBM Plex Sans Arabic", "Tajawal", sans-serif}
+.dashboard-slide-root {
+    width: 1280px;
+    height: 720px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FBFBFB
+    }
+.title-region-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 30px;
+    margin-bottom: 25px;
+    border-right: 6px solid #28A745;
+    background-color: #FFF;
+    direction: rtl;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05)
+    }
+.title-region-wrapper h2 {
+    font-family: "IBM Plex Sans Arabic";
+    font-weight: 700;
+    font-size: 24px;
+    color: #036;
+    margin: 0
+    }
+.title-region-underline {
+    height: 2px;
+    width: 60px;
+    background-color: #036;
+    margin-top: 8px
+    }
+.dashboard-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 25px
+    }
+.dashboard-kpi-card {
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border-bottom: 4px solid #036;
+    display: flex;
+    align-items: center;
+    gap: 15px
+    }
+.dashboard-kpi-icon {
+    font-size: 32px;
+    color: #28A745;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(40, 167, 69, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%
+    }
+.dashboard-kpi-info {
+    display: flex;
+    flex-direction: column
+    }
+.dashboard-kpi-label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px
+    }
+.dashboard-kpi-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #036
+    }
+.dashboard-charts-layout {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    align-items: stretch
+    }
+.dashboard-chart-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02)
+    }
+.dashboard-chart-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #036;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px
+    }
+.dashboard-chart-title i {
+    color: #28A745
+    }
+.status-pie-chart-container {
+    height: 320px;
+    width: 100%
+    }
+.category-bar-chart-container {
+    height: 320px;
+    width: 100%
+    }
+.dashboard-footer-note {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #777;
+    text-align: left;
+    font-style: italic
+    }
+html { overflow: hidden; }
+</style>
+</head>
+<body>
+<div class="dashboard-slide-root" style="overflow: hidden;">
+<!-- Slide Title Section -->
+<div class="title-region-wrapper">
+<h2>لوحة التحكم ومؤشرات الأداء الرئيسية</h2>
+<div class="title-region-underline"></div>
+</div>
+<!-- KPI Stats Grid -->
+<div class="dashboard-stats-grid">
+<div class="dashboard-kpi-card">
+<div class="dashboard-kpi-icon">
+<i class="fas fa-list-check"></i>
+</div>
+<div class="dashboard-kpi-info">
+<span class="dashboard-kpi-label">إجمالي الانشغالات</span>
+<span class="dashboard-kpi-value">1,245</span>
+</div>
+</div>
+<div class="dashboard-kpi-card">
+<div class="dashboard-kpi-icon">
+<i class="fas fa-chart-line"></i>
+</div>
+<div class="dashboard-kpi-info">
+<span class="dashboard-kpi-label">نسبة الإنجاز</span>
+<span class="dashboard-kpi-value">88.4%</span>
+</div>
+</div>
+<div class="dashboard-kpi-card">
+<div class="dashboard-kpi-icon">
+<i class="fas fa-clock-rotate-left"></i>
+</div>
+<div class="dashboard-kpi-info">
+<span class="dashboard-kpi-label">متوسط زمن الرد</span>
+<span class="dashboard-kpi-value">3.5 أيام</span>
+</div>
+</div>
+<div class="dashboard-kpi-card">
+<div class="dashboard-kpi-icon">
+<i class="fas fa-user-clock"></i>
+</div>
+<div class="dashboard-kpi-info">
+<span class="dashboard-kpi-label">طلبات في الانتظار</span>
+<span class="dashboard-kpi-value">42</span>
+</div>
+</div>
+</div>
+<!-- Charts Grid -->
+<div class="dashboard-charts-layout">
+<div class="dashboard-chart-column">
+<div class="dashboard-chart-title">
+<i class="fas fa-pie-chart"></i>
+<span>توزيع الانشغالات حسب الحالة</span>
+</div>
+<div class="status-pie-chart-container" id="statusPieChart"></div>
+</div>
+<div class="dashboard-chart-column">
+<div class="dashboard-chart-title">
+<i class="fas fa-bar-chart"></i>
+<span>تصنيف الانشغالات حسب القطاع</span>
+</div>
+<div class="category-bar-chart-container" id="categoryBarChart"></div>
+</div>
+</div>
+<div class="dashboard-footer-note">
+            * يتم تحديث البيانات بشكل فوري وتلقائي من قاعدة البيانات المركزية للوزارة.
+        </div>
+</div>
+<script>
+        // Pie Chart Configuration
+        const pieDom = document.getElementById('statusPieChart');
+        const pieChart = echarts.init(pieDom);
+        const pieOption = {
+            color: ['#28A745', '#003366', '#FFC107', '#DC3545'],
+            series: [
+                {
+                    name: 'حالة الشكوى',
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    avoidLabelOverlap: false,
+                    itemStyle: {
+                        borderRadius: 10,
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    },
+                    label: {
+                        show: true,
+                        position: 'outside',
+                        formatter: '{b}: {c} ({d}%)',
+                        fontSize: 12,
+                        color: '#333'
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: 14,
+                            fontWeight: 'bold'
+                        }
+                    },
+                    data: [
+                        { value: 750, name: 'مكتملة' },
+                        { value: 245, name: 'قيد المعالجة' },
+                        { value: 150, name: 'جديدة' },
+                        { value: 100, name: 'مرفوضة' }
+                    ]
+                }
+            ]
+        };
+        pieChart.setOption(pieOption);
+
+        // Bar Chart Configuration
+        const barDom = document.getElementById('categoryBarChart');
+        const barChart = echarts.init(barDom);
+        const barOption = {
+            grid: {
+                left: '5%',
+                right: '5%',
+                bottom: '10%',
+                top: '10%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                data: ['بيداغوجي', 'إداري', 'مالي', 'خدماتي', 'أخرى'],
+                axisLabel: {
+                    color: '#555',
+                    fontSize: 12
+                }
+            },
+            yAxis: {
+                type: 'value',
+                axisLabel: {
+                    color: '#555'
+                },
+                splitLine: {
+                    lineStyle: {
+                        type: 'dashed',
+                        color: '#eee'
+                    }
+                }
+            },
+            series: [
+                {
+                    data: [450, 320, 180, 145, 150],
+                    type: 'bar',
+                    barWidth: '50%',
+                    itemStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            { offset: 0, color: '#28A745' },
+                            { offset: 1, color: '#003366' }
+                        ]),
+                        borderRadius: [5, 5, 0, 0]
+                    },
+                    label: {
+                        show: true,
+                        position: 'top',
+                        color: '#003366',
+                        fontSize: 12
+                    }
+                }
+            ]
+        };
+        barChart.setOption(barOption);
+    </script>
+
+</body></html>

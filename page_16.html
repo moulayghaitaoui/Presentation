@@ -1,0 +1,233 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=1280, height=720" name="viewport"/>
+<title>بوابة الانشغال - البيانات والمعلومات</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&amp;family=Tajawal:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+    }
+body {width: 1280px; height: 720px; overflow: hidden; background-color: #FBFBFB;
+    font-family: "IBM Plex Sans Arabic", "Tajawal", sans-serif}
+.slide-root-container {
+    width: 1280px;
+    height: 720px;
+    background-color: #FBFBFB;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative
+    }
+/* --- Title Region Implementation --- */
+.title-section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 30px;
+    margin-bottom: 30px;
+    border-right: 6px solid #28A745;
+    background-color: #FFF;
+    direction: rtl;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05)
+    }
+.title-main-heading {
+    font-family: "IBM Plex Sans Arabic";
+    font-weight: 700;
+    font-size: 24px;
+    color: #036;
+    margin: 0
+    }
+.title-underline-bar {
+    height: 2px;
+    width: 60px;
+    background-color: #036;
+    margin-top: 8px
+    }
+.title-description-text {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+    font-weight: 400
+    }
+/* --- Content Layout --- */
+.main-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: stretch;
+    flex: 1;
+    width: 100%
+    }
+.data-column-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FFF;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #EAEAEA
+    }
+.column-header-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #F0F0F0;
+    padding-bottom: 15px
+    }
+.column-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    background-color: #036;
+    color: #FFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px
+    }
+.column-header-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #036
+    }
+.data-list-container {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px
+    }
+.data-item-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background-color: #F9FBFD;
+    border-right: 4px solid #28A745;
+    border-radius: 6px
+    }
+.item-icon-bullet {
+    color: #28A745;
+    font-size: 16px;
+    margin-top: 4px
+    }
+.item-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px
+    }
+.item-main-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #036
+    }
+.item-sub-detail {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4
+    }
+/* --- Footer Info --- */
+.system-notice-footer {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #E8F5E9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #2E7D32;
+    font-size: 14px;
+    font-weight: 500
+    }
+html { overflow: hidden; }
+</style>
+</head>
+<body>
+<div class="slide-root-container" style="overflow: hidden;">
+<!-- Title Region -->
+<div class="title-section-container">
+<h2 class="title-main-heading">البيانات المطلوبة والمعلومات الداخلية</h2>
+<div class="title-underline-bar"></div>
+<p class="title-description-text">تحديد البيانات الأساسية للمستخدم والمعلومات التقنية التي يولدها النظام لتوثيق كل خطوة في مسار المعالجة.</p>
+</div>
+<!-- Main Content -->
+<div class="main-content-wrapper">
+<!-- Left Column: User Input Data -->
+<div class="data-column-box left-user-input-block">
+<div class="column-header-group">
+<div class="column-icon-wrapper">
+<i class="fas fa-user-edit"></i>
+</div>
+<h3 class="column-header-title">بيانات مقدم الانشغال (المدخلات)</h3>
+</div>
+<ul class="data-list-container">
+<li class="data-item-card">
+<i class="fas fa-id-card item-icon-bullet"></i>
+<div class="item-text-content">
+<span class="item-main-label">المعلومات الشخصية</span>
+<span class="item-sub-detail">الاسم الكامل، رقم التعريف الوطني، ومعلومات الاتصال (الهاتف والبريد).</span>
+</div>
+</li>
+<li class="data-item-card">
+<i class="fas fa-graduation-cap item-icon-bullet"></i>
+<div class="item-text-content">
+<span class="item-main-label">بيانات التكوين</span>
+<span class="item-sub-detail">اسم المؤسسة التكوينية، الولاية، التخصص، والصفة (متربص، موظف، ولي).</span>
+</div>
+</li>
+<li class="data-item-card">
+<i class="fas fa-file-alt item-icon-bullet"></i>
+<div class="item-text-content">
+<span class="item-main-label">تفاصيل الانشغال</span>
+<span class="item-sub-detail">تصنيف الموضوع، نص الشكوى المفصل، والمرفقات الثبوتية (صور أو وثائق).</span>
+</div>
+</li>
+</ul>
+</div>
+<!-- Right Column: System Internal Data -->
+<div class="data-column-box right-system-info-block">
+<div class="column-header-group">
+<div class="column-icon-wrapper">
+<i class="fas fa-server"></i>
+</div>
+<h3 class="column-header-title">البيانات التقنية والداخلية (التوثيق)</h3>
+</div>
+<ul class="data-list-container">
+<li class="data-item-card">
+<i class="fas fa-fingerprint item-icon-bullet"></i>
+<div class="item-text-content">
+<span class="item-main-label">المعرف المرجعي (UUID)</span>
+<span class="item-sub-detail">رقم فريد لكل شكوى يضمن عدم التكرار ويسهل عملية التتبع السريع.</span>
+</div>
+</li>
+<li class="data-item-card">
+<i class="fas fa-history item-icon-bullet"></i>
+<div class="item-text-content">
+<span class="item-main-label">سجل العمليات (Audit Log)</span>
+<span class="item-sub-detail">توثيق زمني لكل إجراء: وقت الإيداع، وقت التوجيه، والموظف المسؤول.</span>
+</div>
+</li>
+<li class="data-item-card">
+<i class="fas fa-stopwatch item-icon-bullet"></i>
+<div class="item-text-content">
+<span class="item-main-label">مؤشرات الأداء الزمنية (SLA)</span>
+<span class="item-sub-detail">احتساب الوقت المنقضي، المتبقي للرد، ودرجة الأولوية آلياً.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- Footer Notice -->
+<div class="system-notice-footer">
+<i class="fas fa-shield-halved"></i>
+<span>يتم تشفير كافة البيانات الشخصية والتقنية وضمان أرشفتها رقمياً وفق المعايير الأمنية لوزارة التكوين والتعليم المهنيين.</span>
+</div>
+</div>
+
+</body></html>

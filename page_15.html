@@ -1,0 +1,246 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حالات الشكوى وتتبع التقدم</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&amp;family=Tajawal:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>:root {
+    --primary-blue: #036;
+    --accent-green: #28A745;
+    --bg-gray: #FBFBFB;
+    --text-dark: #333;
+    --text-gray: #555;
+    --white: #FFF
+    }
+body {width: 1280px; height: 720px; overflow: hidden; font-family: "IBM Plex Sans Arabic", "Tajawal", sans-serif;
+    background-color: #E5E5E5;
+    display: flex;
+    justify-content: center;
+    align-items: center}
+.slide-root-container {
+    width: 1280px;
+    height: 720px;
+    background-color: var(--bg-gray);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    box-sizing: border-box
+    }
+.title-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 30px;
+    margin-bottom: 30px;
+    border-right: 6px solid var(--accent-green);
+    background-color: var(--white);
+    direction: rtl;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05)
+    }
+.title-main-text {
+    font-family: "IBM Plex Sans Arabic";
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--primary-blue);
+    margin: 0
+    }
+.title-underline-element {
+    height: 3px;
+    width: 80px;
+    background-color: var(--primary-blue);
+    margin-top: 8px
+    }
+.content-columns-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: stretch;
+    flex: 1
+    }
+.left-status-column, .right-status-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px
+    }
+.status-card-item {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+    border: 1px solid #EEE;
+    flex: 1
+    }
+.status-icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-left: 20px;
+    flex-shrink: 0
+    }
+.status-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+    }
+.status-label-text {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--primary-blue)
+    }
+.status-desc-text {
+    font-size: 16px;
+    color: var(--text-gray);
+    line-height: 1.4
+    }
+/* Status-Specific Styles */
+.color-new {
+    border-right: 5px solid #036
+    }
+.bg-new {
+    background-color: rgba(0, 51, 102, 0.1);
+    color: #036
+    }
+.color-processing {
+    border-right: 5px solid #17A2B8
+    }
+.bg-processing {
+    background-color: rgba(23, 162, 184, 0.1);
+    color: #17A2B8
+    }
+.color-waiting {
+    border-right: 5px solid #FFC107
+    }
+.bg-waiting {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #FFC107
+    }
+.color-rejected {
+    border-right: 5px solid #DC3545
+    }
+.bg-rejected {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #DC3545
+    }
+.color-completed {
+    border-right: 5px solid #28A745
+    }
+.bg-completed {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28A745
+    }
+.info-block-item {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    text-align: center
+    }
+.info-title-text {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px
+    }
+.info-body-text {
+    font-size: 15px;
+    opacity: 0.9
+    }
+.status-badge-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px
+    }
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%
+    }
+html { overflow: hidden; }
+</style>
+</head>
+<body>
+<div class="slide-root-container" style="overflow: hidden;">
+<!-- Title Section -->
+<div class="title-section-wrapper">
+<h2 class="title-main-text">حالات الشكوى وتتبع التقدم</h2>
+<div class="title-underline-element"></div>
+</div>
+<!-- Main Content Layout -->
+<div class="content-columns-layout">
+<!-- Left Column: Active Statuses -->
+<div class="left-status-column">
+<div class="status-card-item color-new">
+<div class="status-icon-box bg-new">
+<i class="fas fa-paper-plane"></i>
+</div>
+<div class="status-text-content">
+<span class="status-label-text">جديدة (New)</span>
+<span class="status-desc-text">تم استلام الشكوى بنجاح وهي بانتظار المراجعة الأولية والتوجيه.</span>
+</div>
+</div>
+<div class="status-card-item color-processing">
+<div class="status-icon-box bg-processing">
+<i class="fas fa-spinner fa-spin"></i>
+</div>
+<div class="status-text-content">
+<span class="status-label-text">قيد المعالجة (Processing)</span>
+<span class="status-desc-text">الشكوى قيد الدراسة التقنية والميدانية من قبل المصلحة المختصة.</span>
+</div>
+</div>
+<div class="status-card-item color-waiting">
+<div class="status-icon-box bg-waiting">
+<i class="fas fa-hourglass-half"></i>
+</div>
+<div class="status-text-content">
+<span class="status-label-text">بانتظار معلومات (Pending)</span>
+<span class="status-desc-text">تم تعليق المعالجة مؤقتاً لطلب توضيحات أو وثائق إضافية من المستخدم.</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Terminal Statuses &amp; Summary -->
+<div class="right-status-column">
+<div class="status-card-item color-rejected">
+<div class="status-icon-box bg-rejected">
+<i class="fas fa-ban"></i>
+</div>
+<div class="status-text-content">
+<span class="status-label-text">مرفوضة (Rejected)</span>
+<span class="status-desc-text">تم رفض الطلب لعدم الاختصاص أو عدم استيفاء الشروط مع ذكر الأسباب.</span>
+</div>
+</div>
+<div class="status-card-item color-completed">
+<div class="status-icon-box bg-completed">
+<i class="fas fa-check-double"></i>
+</div>
+<div class="status-text-content">
+<span class="status-label-text">مكتملة (Completed)</span>
+<span class="status-desc-text">تم تقديم الحل النهائي للانشغال وإبلاغ المستخدم وإغلاق الملف.</span>
+</div>
+</div>
+<!-- Balanced Info Block -->
+<div class="info-block-item">
+<div class="info-title-text">
+<i class="fas fa-info-circle" style="margin-left: 8px;"></i>
+                        أهمية تتبع الحالة
+                    </div>
+<div class="info-body-text">
+                        تسمح هذه الحالات للإدارة بمراقبة دورة حياة الشكوى بدقة، وتحديد نقاط الاختناق في المعالجة، وضمان الشفافية المطلقة تجاه المواطن.
+                    </div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

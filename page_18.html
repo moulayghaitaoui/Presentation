@@ -1,0 +1,260 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>نظام التتبع والتنبيهات الآلية</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&amp;family=Tajawal:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>* {
+    margin: 0 0;
+    padding: 0 0;
+    box-sizing: border-box
+    }
+body {width: 1280px; height: 720px; overflow: hidden; background-color: #EEE;
+    font-family: "IBM Plex Sans Arabic", "Tajawal", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center}
+.slide-root-container {
+    width: 1280px;
+    height: 720px;
+    background-color: #FBFBFB;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 40px
+    }
+/* Title Region from DESIGN */
+.title-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 30px;
+    margin-bottom: 20px;
+    border-right: 6px solid #28A745;
+    background-color: #FFF;
+    direction: rtl;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05)
+    }
+.title-main-text {
+    font-family: "IBM Plex Sans Arabic";
+    font-weight: 700;
+    font-size: 24px;
+    color: #036;
+    margin: 0 0
+    }
+.title-accent-line {
+    height: 2px;
+    width: 60px;
+    background-color: #036;
+    margin-top: 6px
+    }
+.main-content-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 24px 30px;
+    flex: 1;
+    align-items: stretch
+    }
+.left-tracking-column, .right-notifications-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px 20px
+    }
+.feature-card-item {
+    flex: 1;
+    background-color: #FFF;
+    border-radius: 12px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 16px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #E0E0E0;
+    transition: transform 0.3s ease
+    }
+.feature-icon-box {
+    width: 70px;
+    height: 70px;
+    background-color: #F0F7FF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0
+    }
+.feature-icon-box i {
+    font-size: 29px;
+    color: #036
+    }
+.feature-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px 8px
+    }
+.feature-main-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #036
+    }
+.feature-sub-description {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5
+    }
+.column-header-tag {
+    background-color: #036;
+    color: #FFF;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 700;
+    width: fit-content;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px 10px
+    }
+.status-flow-container {
+    margin-top: 24px;
+    background-color: #FFF;
+    padding: 16px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 4px solid #28A745
+    }
+.status-step-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px 10px;
+    position: relative
+    }
+.status-node-dot {
+    width: 15px;
+    height: 15px;
+    background-color: #28A745;
+    border-radius: 50%
+    }
+.status-node-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #036
+    }
+.status-node-icon {
+    font-size: 11px;
+    color: #28A745
+    }
+html { overflow: hidden; }
+</style>
+</head>
+<body>
+<div class="slide-root-container" style="overflow: hidden;">
+<!-- Title Region -->
+<div class="title-section-wrapper">
+<h2 class="title-main-text">نظام التتبع والتنبيهات الآلية</h2>
+<div class="title-accent-line"></div>
+</div>
+<!-- Main Layout -->
+<div class="main-content-layout">
+<!-- Left Column: Tracking System -->
+<div class="left-tracking-column">
+<div class="column-header-tag">
+<i class="fas fa-route"></i>
+                    آليات تتبع الانشغال
+                </div>
+<div class="feature-card-item">
+<div class="feature-icon-box">
+<i class="fas fa-hashtag"></i>
+</div>
+<div class="feature-text-content">
+<div class="feature-main-title">الرقم المرجعي الموحد</div>
+<div class="feature-sub-description">رمز فريد لكل شكوى يسمح للمواطن بمتابعة طلبه دون الحاجة للتواصل المباشر.</div>
+</div>
+</div>
+<div class="feature-card-item">
+<div class="feature-icon-box">
+<i class="fas fa-spinner"></i>
+</div>
+<div class="feature-text-content">
+<div class="feature-main-title">مراقبة المسار اللحظي</div>
+<div class="feature-sub-description">عرض تفصيلي للمرحلة الحالية للشكوى والجهة المسؤولة عن معالجتها الآن.</div>
+</div>
+</div>
+<div class="feature-card-item">
+<div class="feature-icon-box">
+<i class="fas fa-history"></i>
+</div>
+<div class="feature-text-content">
+<div class="feature-main-title">سجل العمليات (Audit Trail)</div>
+<div class="feature-sub-description">توثيق كامل لكل إجراء تم اتخاذه على الطلب مع تحديد الوقت والموظف المسؤول.</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Notifications -->
+<div class="right-notifications-column">
+<div class="column-header-tag">
+<i class="fas fa-bullhorn"></i>
+                    قنوات التنبيه الفوري
+                </div>
+<div class="feature-card-item">
+<div class="feature-icon-box">
+<i class="fas fa-sms"></i>
+</div>
+<div class="feature-text-content">
+<div class="feature-main-title">رسائل نصية قصيرة (SMS)</div>
+<div class="feature-sub-description">إرسال إشعارات فورية لهاتف المستخدم عند قبول الشكوى أو صدور الرد النهائي.</div>
+</div>
+</div>
+<div class="feature-card-item">
+<div class="feature-icon-box">
+<i class="fas fa-envelope-open-text"></i>
+</div>
+<div class="feature-text-content">
+<div class="feature-main-title">تنبيهات البريد الإلكتروني</div>
+<div class="feature-sub-description">رسائل تفصيلية تحتوي على محتوى الرد أو طلب معلومات إضافية من المستخدم.</div>
+</div>
+</div>
+<div class="feature-card-item">
+<div class="feature-icon-box">
+<i class="fas fa-bell"></i>
+</div>
+<div class="feature-text-content">
+<div class="feature-main-title">إشعارات المنصة (Push)</div>
+<div class="feature-sub-description">تنبيهات حية تظهر لموظفي الإدارة والوزارة عند وصول انشغالات جديدة تستدعي التدخل.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Flow Visualization -->
+<div class="status-flow-container">
+<div class="status-step-node">
+<i class="fas fa-check-circle status-node-icon"></i>
+<div class="status-node-dot"></div>
+<div class="status-node-label">تقديم الطلب</div>
+</div>
+<div style="flex: 1;height: 2px;background: repeating-linear-gradient(to left, #28A745, #28A745 5px, transparent 5px, transparent 10px);margin: 0 10px;margin-top: -20px;"></div>
+<div class="status-step-node">
+<i class="fas fa-bell status-node-icon"></i>
+<div class="status-node-dot"></div>
+<div class="status-node-label">إشعار الاستلام</div>
+</div>
+<div style="flex: 1;height: 2px;background: repeating-linear-gradient(to left, #28A745, #28A745 5px, transparent 5px, transparent 10px);margin: 0 10px;margin-top: -20px;"></div>
+<div class="status-step-node">
+<i class="fas fa-sync-alt status-node-icon"></i>
+<div class="status-node-dot"></div>
+<div class="status-node-label">تحديث الحالة</div>
+</div>
+<div style="flex: 1;height: 2px;background: repeating-linear-gradient(to left, #28A745, #28A745 5px, transparent 5px, transparent 10px);margin: 0 10px;margin-top: -20px;"></div>
+<div class="status-step-node">
+<i class="fas fa-envelope status-node-icon"></i>
+<div class="status-node-dot"></div>
+<div class="status-node-label">الرد النهائي</div>
+</div>
+</div>
+</div>
+
+</body></html>
