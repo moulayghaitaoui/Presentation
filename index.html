@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بوابة الانشغال – العرض التقديمي</title>
+    <title>بوابة انشغالات – العرض التقديمي</title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&family=Tajawal:wght@400;700&display=swap");
 
@@ -225,7 +225,6 @@
             animation: fadeIn 0.4s ease-out forwards;
         }
         
-        /* Floating particles or nice background touch (optional) */
         .bg-pattern {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -234,13 +233,47 @@
             pointer-events: none;
         }
 
+        /* Responsive UI Wrapper */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            .controls {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .title {
+                font-size: 18px;
+            }
+            .scale-wrapper {
+                width: 100% !important;
+                height: 100% !important;
+                transform: none !important;
+                border-radius: 0;
+            }
+            iframe {
+                width: 100% !important;
+                height: 100% !important;
+            }
+            .nav-overlay {
+                width: 20%;
+            }
+            .arrow-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
         <div class="title">
-            <span>بوابة الانشغال</span>
+            <span>بوابة انشغالات</span>
             | العرض التقديمي
         </div>
         
